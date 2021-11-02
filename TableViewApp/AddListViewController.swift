@@ -23,15 +23,25 @@ class AddListViewController: UIViewController {
         
     }
     
+    
+    
     @IBAction func addTask(_ sender: Any) {
         
         let userDefaults = UserDefaults.standard
-        taskArray.append(addTextField.text!)
+        
+        if addTextField.text != "" {
+            taskArray.append(addTextField.text!)
+        }
+        
         
         userDefaults.set(taskArray, forKey: "add")
         
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    
+    
     
     
     /*
